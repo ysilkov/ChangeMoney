@@ -1,0 +1,14 @@
+.formFirst{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    padding: 50px 400px;
+}
+.formSecond{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    padding: 0px 400px;
+}
+.select{
+    width: 10px;
+    height: 10px;
+}
