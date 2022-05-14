@@ -1,9 +1,9 @@
-import './App.css';
+
 import React from 'react';
-import Loading from './Loading/Loading';
+import Loading from './../Loading/Loading'
 import ApiContainer from './ApiContainer';
 
-export default class API extends React.Component{
+export default class Api extends React.Component{
   state ={
       USD: "",
       EUR: "", 
