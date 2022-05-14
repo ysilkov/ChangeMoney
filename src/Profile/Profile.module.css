@@ -1,12 +1,12 @@
 .formFirst{
     display: grid;
     grid-template-columns: 1fr 1fr ;
-    padding: 50px 400px;
+    padding: 50px 350px;
 }
 .formSecond{
     display: grid;
     grid-template-columns: 1fr 1fr ;
-    padding: 0px 400px;
+    padding: 0px 350px;
 }
 .select{
     width: 10px;

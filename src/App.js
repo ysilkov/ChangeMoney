@@ -1,16 +1,14 @@
 import './App.css';
-import Header from "./Header/Header";
-import Profile from "./Profile/Profile";
+import React from 'react';
+import API from './API';
 
-const App= ()=> {
-  return (
-    <div className="App">
-      <div>
-        <Header />
-        <Profile/>
-      </div>
-    </div>
-  )
-}
-
-export default App;
+const App =() =>{
+            return (
+              <div className="App">
+              <div>
+                <API />
+              </div>
+            </div>
+            )
+            }
+          export default App;
