@@ -1,17 +1,26 @@
 .formFirst{
     display: grid;
     grid-template-columns: 1fr 1fr ;
-    padding: 50px 350px;
+    padding: 50px 490px;
 }
 .formSecond{
     display: grid;
     grid-template-columns: 1fr 1fr ;
-    padding: 0px 350px;
+    padding: 0px 490px;
 }
 .select{
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
+    margin-left: 10px;
 }
 .main{
     background-color: blue;
+    background-size: 100% 100%;
+    padding-bottom: 400px;
+    
+}
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
 }
