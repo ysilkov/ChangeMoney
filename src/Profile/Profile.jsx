@@ -2,128 +2,60 @@ import React from "react";
 import style from "./Profile.module.css";
 
 const Profile = (props) => {
-  const input = document.querySelector("#input");
-  const result = document.querySelector("#result");
-  const select1 = document.querySelector("#select1");
-  const select2 = document.querySelector("#select2");
+const currencyEl_one = document.getElementById('currency-one');
+const amountEl_one = document.getElementById('amount-one');
+const currencyEl_two = document.getElementById('currency-two');
+const amountEl_two = document.getElementById('amount-two');
 
-  const onSelect = () => {
-    if (select1.value === select2.value) {
-      result.value = input.value;
+  const onSelectOne = () => {
+      const currency_one = currencyEl_one.value;
+      const currency_two = currencyEl_two.value;
+      if(currency_one ==="UAH"){ return amountEl_one.value = (parseFloat(amountEl_two.value) * props.state[currency_two]).toFixed(2)};
+      const rate = props.state[currency_two] / props.state[currency_one];
+      amountEl_one.value = (parseFloat(amountEl_two.value) * (rate)).toFixed(2);
+        }
+  const onSelectTwo = () => {
+    const currency_one = currencyEl_one.value;
+    const currency_two = currencyEl_two.value;
+    if(currency_two==="UAH"){ return amountEl_two.value = (parseFloat(amountEl_one.value) * props.state[currency_one]).toFixed(2)};
+    const rate = props.state[currency_one]/props.state[currency_two];
+    amountEl_two.value = (parseFloat(amountEl_one.value) * (rate)).toFixed(2);
     }
-    if (select1.value === "UAH" && select2.value === "USD") {
-      result.value = (parseFloat(input.value) / props.state.USD).toFixed(2);
-    }
-    if (select1.value === "UAH" && select2.value === "EUR") {
-      result.value = (parseFloat(input.value) / props.state.EUR).toFixed(2);
-    }
-    if (select1.value === "USD" && select2.value === "UAH") {
-      result.value = (parseFloat(input.value) * props.state.USD).toFixed(0);
-    }
-    if (select1.value === "USD" && select2.value === "EUR") {
-      result.value = (
-        (parseFloat(input.value) * props.state.USD) /
-        props.state.EUR
-      ).toFixed(2);
-    }
-    if (select1.value === "USD" && select2.value === "UAH") {
-      result.value = (parseFloat(input.value) * props.state.USD).toFixed(0);
-    }
-    if (select1.value === "USD" && select2.value === "EUR") {
-      result.value = (
-        (parseFloat(input.value) * props.state.USD) /
-        props.state.EUR
-      ).toFixed(2);
-    }
-    if (select1.value === "EUR" && select2.value === "UAH") {
-      result.value = (parseFloat(input.value) * props.state.EUR).toFixed(0);
-    }
-    if (select1.value === "EUR" && select2.value === "USD") {
-      result.value = (
-        (parseFloat(input.value) * props.state.EUR) /
-        props.state.USD
-      ).toFixed(2);
-    }
-  };
-  const onSelect2 = () => {
-    if (select2.value === select1.value) {
-      input.value = result.value;
-    }
-    if (select2.value === "UAH" && select1.value === "USD") {
-      input.value = (parseFloat(result.value) / props.state.USD).toFixed(2);
-    }
-    if (select2.value === "UAH" && select1.value === "EUR") {
-      input.value = (parseFloat(result.value) / props.state.EUR).toFixed(2);
-    }
-    if (select2.value === "USD" && select1.value === "UAH") {
-      input.value = (parseFloat(result.value) * props.state.USD).toFixed(0);
-    }
-    if (select2.value === "USD" && select1.value === "EUR") {
-      input.value = (
-        (parseFloat(result.value) * props.state.USD) /
-        props.state.EUR
-      ).toFixed(2);
-    }
-    if (select2.value === "USD" && select1.value === "UAH") {
-      input.value = (parseFloat(result.value) * props.state.USD).toFixed(0);
-    }
-    if (select2.value === "USD" && select1.value === "EUR") {
-      input.value = (
-        (parseFloat(result.value) * props.state.USD) /
-        props.state.EUR
-      ).toFixed(2);
-    }
-    if (select2.value === "EUR" && select1.value === "UAH") {
-      input.value = (parseFloat(result.value) * props.state.EUR).toFixed(0);
-    }
-    if (select2.value === "EUR" && select1.value === "USD") {
-      input.value = (
-        (parseFloat(result.value) * props.state.EUR) /
-        props.state.USD
-      ).toFixed(2);
-    }
-  };
-  const clickInput = () => {
-    onSelect();
-  };
-  const clickResult = () => {
-    onSelect2();
-  };
   return (
     <div className={style.main}>
       <div className={style.formFirst}>
         <div className={style.input}>
           <input
-            id="input"
+            id="amount-one"
             autoFocus
             type="number"
-            onInput={clickInput}
+            onInput={onSelectTwo}
             placeholder="Введіть число"
           />
         </div>
         <div className={style.select}>
-          <select id="select1" onClick={onSelect2}>
-            <option value="UAH">UAH</option>
-            <option value="USD">USD</option>
+          <select id="currency-one" onClick={onSelectOne}>
             <option value="EUR">EUR</option>
+            <option value="UAH" selected>UAH</option>
+            <option value="USD">USD</option>
           </select>
         </div>
       </div>
       <div className={style.formSecond}>
         <div className={style.input}>
           <input
-            id="result"
+            id="amount-two"
             autoFocus
             type="number"
-            onInput={clickResult}
+            onInput={onSelectOne}
             placeholder="Введіть число"
           />
         </div>
         <div className={style.select}>
-          <select id="select2" onClick={onSelect}>
-            <option value="UAH">UAH</option>
-            <option value="USD">USD</option>
+          <select id="currency-two" onClick={onSelectTwo}>
             <option value="EUR">EUR</option>
+            <option value="UAH" selected>UAH</option>
+            <option value="USD">USD</option>
           </select>
         </div>
       </div>
