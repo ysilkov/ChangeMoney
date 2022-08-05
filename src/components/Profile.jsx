@@ -1,5 +1,4 @@
 import React from "react";
-import style from "./Profile.module.css";
 
 const Profile = (props) => {
   const currencyEl_one = document.getElementById("currency-one");
@@ -30,9 +29,9 @@ const Profile = (props) => {
     amountEl_two.value = (parseFloat(amountEl_one.value) * rate).toFixed(2);
   };
   return (
-    <div className={style.main}>
-      <div className={style.formFirst}>
-        <div className={style.input}>
+    <div className="main">
+      <div className="formFirst">
+        <div className="input">
           <input
             id="amount-one"
             autoFocus
@@ -41,7 +40,7 @@ const Profile = (props) => {
             placeholder="Введіть число"
           />
         </div>
-        <div className={style.select}>
+        <div className="select">
           <select id="currency-one" onClick={onSelectOne}>
             <option value="EUR">EUR</option>
             <option value="UAH" selected>
@@ -51,8 +50,8 @@ const Profile = (props) => {
           </select>
         </div>
       </div>
-      <div className={style.formSecond}>
-        <div className={style.input}>
+      <div className="formSecond">
+        <div className="style.input">
           <input
             id="amount-two"
             autoFocus
@@ -61,7 +60,7 @@ const Profile = (props) => {
             placeholder="Введіть число"
           />
         </div>
-        <div className={style.select}>
+        <div className="select">
           <select id="currency-two" onClick={onSelectTwo}>
             <option value="EUR">EUR</option>
             <option value="UAH" selected>

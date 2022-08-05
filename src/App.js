@@ -1,6 +1,6 @@
 import "./App.css";
 import React from "react";
-import Api from "./Api/Api"
+import Api from "./components/Api"
 
 const App = () => {
   return (

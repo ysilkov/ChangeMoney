@@ -1,6 +1,6 @@
 import React from "react";
-import Header from "../Header/Header";
-import Profile from "../Profile/Profile";
+import Header from "./Header";
+import Profile from "./Profile";
 
 const ApiContainer = (props) => {
   return (
