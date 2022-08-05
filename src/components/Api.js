@@ -30,10 +30,7 @@ class Api extends React.Component {
   render() {
     return (
       <>
-        {this.state.isLoading ? (
-          <Loading />
-        ) : (
-          <ApiContainer state={this.state} />
+       
         )}
       </>
     );

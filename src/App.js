@@ -5,9 +5,11 @@ import Api from "./components/Api"
 const App = () => {
   return (
     <div className="App">
-      <div>
-        <Api />
-      </div>
+      {this.state.isLoading ? (
+          <Loading />
+        ) : (
+          <ApiContainer state={this.state} />
+        )}
     </div>
   );
 };
