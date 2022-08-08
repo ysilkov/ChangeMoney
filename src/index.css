@@ -35,7 +35,7 @@ code {
   flex-direction: column-reverse;
   text-align: center;
   padding-top: 50px;
-  padding-left: 50px;
+  padding-left: 60px;
   
 }
 input[type=number]::-webkit-outer-spin-button,
@@ -47,6 +47,14 @@ input[type=number]::-webkit-inner-spin-button{
   color: blue;
   text-align: center;
   padding: 10px 50px 10px 0;
-  background-color: yellow;   
-  
+  background-color: yellow;    
+}
+.footer{
+  position: fixed;
+  width: 100%;
+  height: 30px;
+  left: 0px;
+  bottom: 0px;
+  background-color: yellow;
+  padding-top: 5px;
 }
