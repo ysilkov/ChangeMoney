@@ -18,6 +18,7 @@ export const exchangeRate = createSlice({
   name: "exchange",
   initialState: {
     USD: 0,
+    UAH: 1,
     EUR: 0,
     loading: false,
     error: null,
