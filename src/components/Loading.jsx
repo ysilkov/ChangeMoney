@@ -4,7 +4,7 @@ import loading from "../img/loading_money.gif";
 const Loading = () => {
   return (
     <div>
-      <img src={loading} />
+      <img src={loading} alt="Loading" />
     </div>
   );
 };
