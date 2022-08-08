@@ -10,12 +10,10 @@ const Profile = () => {
     dispatch(getExchangeRate());
   }, [dispatch]);
   const data = useSelector((state) => state.rate);
-  console.log(data)
   const currencyEl_one = document.getElementById("currency-one");
   const amountEl_one = document.getElementById("amount-one");
   const currencyEl_two = document.getElementById("currency-two");
   const amountEl_two = document.getElementById("amount-two");
-
   const onSelectOne = () => {
     const currency_one = currencyEl_one.value;
     const currency_two = currencyEl_two.value;
@@ -25,9 +23,7 @@ const Profile = () => {
       ).toFixed(2));
     }
     const rate = data[currency_two] / data[currency_one];
-    amountEl_one.value = (
-      parseFloat(amountEl_two.value) * rate
-    ).toFixed(2);
+    amountEl_one.value = (parseFloat(amountEl_two.value) * rate).toFixed(2);
   };
   const onSelectTwo = () => {
     const currency_one = currencyEl_one.value;
@@ -38,9 +34,7 @@ const Profile = () => {
       ).toFixed(2));
     }
     const rate = data[currency_one] / data[currency_two];
-    amountEl_two.value = (
-      parseFloat(amountEl_one.value) * rate
-    ).toFixed(2);
+    amountEl_two.value = (parseFloat(amountEl_one.value) * rate).toFixed(2);
   };
   return (
     <>

@@ -13,14 +13,18 @@ code {
 }
 
 .formFirst{
-  display: grid;
-  grid-template-columns: 1fr 1fr ;
-  padding: 50px 490px;
+  display: flex;
+  justify-content: center;
+  
+  padding-right: 100px;
 }
 .formSecond{
-  display: grid;
-  grid-template-columns: 1fr 1fr ;
-  padding: 0px 490px;
+  display: flex;
+  justify-content: center;
+  padding-right: 100px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+
 }
 .select{
   width: 12px;
