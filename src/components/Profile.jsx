@@ -18,9 +18,7 @@ const Profile = () => {
     const currency_one = currencyEl_one.value;
     const currency_two = currencyEl_two.value;
     if (currency_one === "UAH") {
-      return (amountEl_one.value = (
-        parseFloat(amountEl_two.value) * data[currency_two]
-      ).toFixed(2));
+      return (amountEl_one.value = ( parseFloat(amountEl_two.value) * data[currency_two]).toFixed(2));
     }
     const rate = data[currency_two] / data[currency_one];
     amountEl_one.value = (parseFloat(amountEl_two.value) * rate).toFixed(2);
@@ -29,9 +27,7 @@ const Profile = () => {
     const currency_one = currencyEl_one.value;
     const currency_two = currencyEl_two.value;
     if (currency_two === "UAH") {
-      return (amountEl_two.value = (
-        parseFloat(amountEl_one.value) * data[currency_one]
-      ).toFixed(2));
+      return (amountEl_two.value = (parseFloat(amountEl_one.value) * data[currency_one]).toFixed(2));
     }
     const rate = data[currency_one] / data[currency_two];
     amountEl_two.value = (parseFloat(amountEl_one.value) * rate).toFixed(2);
